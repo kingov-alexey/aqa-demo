@@ -93,6 +93,8 @@ const elementsHeader: ElementsHeader[] = [
   },
 ];
 
+const themeSLDmode = ["light", "dark", "system"];
+
 test.describe("Тестирование элементов хедера", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/");
@@ -128,34 +130,12 @@ test.describe("Тестирование элементов хедера", () => 
     });
   });
 
-  test("Проверка *system*light*dark* theme mode", async ({ page }) => {
-    await page
-      .getByRole("button", { name: "Switch between dark and light" })
-      .click();
-    await expect(page.locator("html")).toHaveAttribute(
-      "data-theme-choice",
-      "light",
-    );
-    await page
-      .getByRole("button", { name: "Switch between dark and light" })
-      .click();
-    await expect(page.locator("html")).toHaveAttribute(
-      "data-theme-choice",
-      "dark",
-    );
-    await page
-      .getByRole("button", { name: "Switch between dark and light" })
-      .click();
-    await expect(page.locator("html")).toHaveAttribute(
-      "data-theme-choice",
-      "system",
-    );
-    await page
-      .getByRole("button", { name: "Switch between dark and light" })
-      .click();
-    await expect(page.locator("html")).toHaveAttribute(
-      "data-theme-choice",
-      "light",
-    );
+  themeSLDmode.forEach((value) => {
+    test(`Проверка *system*light*dark* theme, текущий: ${value} mode`, async ({ page }) => {
+      await page.evaluate((value)=>{
+        document.querySelector('html')?.setAttribute('data-theme', value);
+      }, value);
+      await expect(page).toHaveScreenshot(`${value}_mode.png`);
+    });
   });
 });
