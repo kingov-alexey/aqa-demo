@@ -149,18 +149,30 @@ export class MainPage {
     await this.page.evaluate(() => {
       document.querySelector("html")?.setAttribute("data-theme", "light");
     });
+    await this.page.waitForFunction(
+      () => document.documentElement.getAttribute("data-theme") === "light",
+    );
   }
   async setDarkMode() {
     await this.page.evaluate(() => {
       document.querySelector("html")?.setAttribute("data-theme", "dark");
     });
+    await this.page.waitForFunction(
+      () => document.documentElement.getAttribute("data-theme") === "dark",
+    );
   }
 
   async checkLayoutWithLightMode() {
-    await expect(this.page).toHaveScreenshot(`light-mode.png`);
+    await this.page.waitForLoadState("networkidle");
+    await this.page.waitForFunction(() => document.fonts.ready);
+    await this.page.waitForTimeout(300);
+    await expect(this.page.locator("body")).toHaveScreenshot("light-mode.png");
   }
 
   async checkLayoutWithDarkMode() {
-    await expect(this.page).toHaveScreenshot(`dark-mode.png`);
+    await this.page.waitForLoadState("networkidle");
+    await this.page.waitForFunction(() => document.fonts.ready);
+    await this.page.waitForTimeout(300);
+    await expect(this.page.locator("body")).toHaveScreenshot(`dark-mode.png`);
   }
 }
