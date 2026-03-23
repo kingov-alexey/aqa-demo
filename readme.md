@@ -49,7 +49,7 @@
 ## 📦 Установка и запуск
 
 ### Предварительные требования
-- Node.js (v18 или выше)
+- Node.js: latest 20.x, 22.x or 24.x.
 - npm или yarn
 - Git
 
@@ -57,7 +57,7 @@
 
 ```bash
 # Клонировать репозиторий
-git clone https://github.com/yourusername/aqa-demo.git
+git clone https://github.com/kingov-alexey/aqa-demo.git
 
 # Перейти в директорию проекта
 cd aqa-demo
