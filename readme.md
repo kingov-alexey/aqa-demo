@@ -49,8 +49,8 @@
 ## 🔗 Используемые ресурсы
 | Ресурсы | Назначение |
 |------------|------------|
-| **[playwright.dev](https://playwright.dev "Подсказка")** | используется в качестве baseURL (стартовые минимальные тесты) |
-| **[saucedemo.com](https://www.saucedemo.com "Подсказка")** | демонстрация storageState (auth.setup.ts)|
+| **<a href="https://playwright.dev" target="_blank" rel="noopener noreferrer">playwright.dev</a>** | используется в качестве baseURL (стартовые минимальные тесты) |
+| **<a href="https://www.saucedemo.com" target="_blank" rel="noopener noreferrer">saucedemo.com</a>** | демонстрация storageState (auth.setup.ts)|
 
 ## 📦 Установка и запуск
 
