@@ -61,11 +61,22 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
+    // Setup project
+    { 
+      name: 'setup-standart-user',
+      testMatch: /.*\.setup\.ts/,
+    },
+      
     {
       name: "chromium",
-      use: { ...devices["Desktop Chrome"] },
+      use: { ...devices["Desktop Chrome"], storageState: 'playwright/.auth/standard-user.json', },
+      dependencies: ['setup-standart-user'],
     },
-
+    // {
+    //   name: "chromium",
+    //   use: { ...devices["Desktop Chrome"] },
+    // },
+    
     // {
     //   name: 'firefox',
     //   use: { ...devices['Desktop Firefox'] },
