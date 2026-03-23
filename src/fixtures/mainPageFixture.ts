@@ -1,10 +1,9 @@
-import { test as base } from '@playwright/test';
-import { MainPage } from '../pages/MainPage';
+import { test as base } from "@playwright/test";
+import { MainPage } from "../pages/MainPage";
 
 // Declare the types of your fixtures.
 type MyFixtures = {
   mainPage: MainPage;
-
 };
 
 // Extend base test by providing "mainPage"
@@ -16,11 +15,7 @@ export const test = base.extend<MyFixtures>({
     await mainPage.openMainPage();
     // Use the fixture value in the test.
     await use(mainPage);
-
-
   },
-
-
 });
 
-export { expect } from '@playwright/test';
+export { expect } from "@playwright/test";

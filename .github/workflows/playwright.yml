@@ -1,4 +1,4 @@
-name: AQA demo - GitHub Action CI
+name: AQA demo
 on:
   push:
     branches:
