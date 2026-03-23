@@ -1,5 +1,5 @@
 
-# AQA-Demo Project
+# AQA-Demo
 
 [![Playwright](https://img.shields.io/badge/Playwright-1.40+-green.svg)](https://playwright.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue.svg)](https://www.typescriptlang.org/)
@@ -45,6 +45,12 @@
 | **Allure** | Система отчетности |
 | **DotEnv** | Управление переменными окружения |
 | **Faker** | Генерация тестовых данных |
+
+## 🔗 Используемые ресурсы
+| Ресурсы | Назначение |
+|------------|------------|
+| **[playwright.dev](https://playwright.dev "Подсказка")** | используется в качестве baseURL (стартовые минимальные тесты) |
+| **[saucedemo.com](https://www.saucedemo.com "Подсказка")** | демонстрация storageState (auth.setup.ts)|
 
 ## 📦 Установка и запуск
 
